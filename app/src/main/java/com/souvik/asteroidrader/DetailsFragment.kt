@@ -41,9 +41,11 @@ class DetailsFragment : Fragment() {
         binding.tvHazardData.text =
             if (details.isPotentiallyHazard) {
                 binding.ivAsteroid.setImageDrawable(requireActivity().getDrawable(R.drawable.dangerous_asteroid))
+                binding.ivAsteroid.contentDescription = "Potentially Hazard Asteroid"
                 "Potentially Hazard"
             } else {
                 binding.ivAsteroid.setImageDrawable(requireActivity().getDrawable(R.drawable.good_asteroid))
+                binding.ivAsteroid.contentDescription = "Not Hazardous Asteroid"
                 "Not Hazardous"
             }
 

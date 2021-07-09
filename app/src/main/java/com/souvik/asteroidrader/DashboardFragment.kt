@@ -93,7 +93,7 @@ class DashboardFragment : Fragment() {
         viewModel.imageUrl.observe(viewLifecycleOwner, Observer {
             Log.d(TAG, "setUpObserver: $it")
             Glide.with(binding.ivOffDay.context)
-                .load(it)
+                .load(it.split("|")[0])
                 .error(resources.getDrawable(R.drawable.ic_image_error))
                 .listener(object : RequestListener<Drawable> {
                     override fun onLoadFailed(
@@ -119,6 +119,8 @@ class DashboardFragment : Fragment() {
 
                 })
                 .into(binding.ivOffDay)
+            Log.d(TAG, "setUpObserver: ${it.split("|")[1]}")
+            binding.ivOffDay.contentDescription = "Image of the Day: ${it.split("|")[1]}"
         })
 
         workManager.getWorkInfoByIdLiveData(sync.id).observe(viewLifecycleOwner, Observer {

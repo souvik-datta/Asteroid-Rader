@@ -52,15 +52,15 @@ class MainViewModel(val context: Application) : AndroidViewModel(context) {
                         "image"
                     )
                 ) {
-                    _url.value = response.body()?.get("url")?.asString
+                    _url.value = response.body()?.get("url")?.asString + "|${response.body()?.get("title")?.asString}"
                 } else {
                     _url.value =
-                        "https://apod.nasa.gov/apod/image/2001/STSCI-H-p2006a-h-1024x614.jpg"
+                        "https://apod.nasa.gov/apod/image/2001/STSCI-H-p2006a-h-1024x614.jpg" +"|Solar System"
                 }
             }
 
             override fun onFailure(call: Call<JsonObject>, t: Throwable) {
-                _url.value = ""
+                _url.value = "|Image cannot be loaded"
             }
 
         })

@@ -18,7 +18,15 @@ class RvAdapter(
         fun bind(data: ApiResponse) {
             binding.tvName.text = data.name
             binding.tvDate.text = data.date
-            binding.ivPotential.setImageDrawable(context.getDrawable(if (data.isPotentiallyHazard) R.drawable.ic_face_sad else R.drawable.ic_face))
+            binding.ivPotential.apply {
+                if (data.isPotentiallyHazard){
+                    setImageDrawable(context.getDrawable(R.drawable.ic_face_sad))
+                    contentDescription = "Potentially Hazardous Asteroid"
+                }else{
+                    setImageDrawable(context.getDrawable(R.drawable.ic_face))
+                    contentDescription = "Non Hazardous Asteroid"
+                }
+            }
             binding.clConatiner.setOnClickListener {
                 onClickViewListner.onClick(adapterPosition)
             }
