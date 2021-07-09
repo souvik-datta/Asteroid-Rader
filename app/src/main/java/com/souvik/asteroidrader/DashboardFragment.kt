@@ -55,6 +55,12 @@ class DashboardFragment : Fragment() {
 
     private fun initView() {
         sync = PeriodicWorkRequestBuilder<DownloadDataWorker>(1, TimeUnit.DAYS)
+            .setConstraints(Constraints.Builder()
+                .setRequiresBatteryNotLow(true)
+                .setRequiredNetworkType(NetworkType.UNMETERED)
+                .setRequiresCharging(true)
+                .build()
+            )
             .build()
 
         workManager = WorkManager

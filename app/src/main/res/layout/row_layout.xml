@@ -47,7 +47,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tool:src="@drawable/ic_launcher_background" />
+            tool:src="@drawable/ic_launcher_background"
+            android:contentDescription="@string/asteroid_hazard_indicator" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

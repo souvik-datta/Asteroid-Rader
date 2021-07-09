@@ -23,7 +23,8 @@
             android:scaleType="centerCrop"
             app:layout_constraintDimensionRatio="16:9"
             app:layout_constraintTop_toTopOf="parent"
-            android:src="@drawable/dangerous_asteroid"/>
+            android:src="@drawable/dangerous_asteroid"
+            android:contentDescription="@string/asteroid_type_image" />
 
         <TextView
             android:id="@+id/tvHazardData"
@@ -32,7 +33,7 @@
             android:fontFamily="sans-serif-black"
             android:gravity="center"
             android:padding="5dp"
-            android:text="Potentially Hazard"
+            android:text="@string/potentially_hazard"
             android:textColor="@{data.potentiallyHazard ? @color/red :  @color/white}"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="@id/ivAsteroid" />
@@ -49,7 +50,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ivAsteroid"
-            android:text="Close approach date" />
+            android:text="@string/close_approach_date" />
 
         <TextView
             android:id="@+id/tvDateData"
@@ -77,7 +78,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvDateData"
-            android:text="Absolute Magnitude" />
+            android:text="@string/absolute_magnitude" />
 
         <TextView
             android:id="@+id/tvAbsoluteMagnitudeData"
@@ -94,6 +95,7 @@
             android:text="@{data.absoluteMagnitude}" />
 
         <ImageView
+            android:id="@+id/ivHelp"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintTop_toTopOf="@id/tvAbsoluteMagnitude"
@@ -102,7 +104,8 @@
             app:layout_constraintDimensionRatio="1:1"
             android:layout_marginEnd="20dp"
             android:padding="10dp"
-            android:src="@drawable/ic_question"/>
+            android:src="@drawable/ic_question"
+            android:contentDescription="@string/help_icon"/>
 
         <TextView
             android:id="@+id/tvEstimatedDiameterMax"

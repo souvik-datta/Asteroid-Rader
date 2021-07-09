@@ -3,4 +3,10 @@
     <string name="image_of_the_day">Image of the day</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="asteroid_type_image">Asteroid Type Image</string>
+    <string name="potentially_hazard">Potentially Hazard</string>
+    <string name="close_approach_date">Close approach date</string>
+    <string name="absolute_magnitude">Absolute Magnitude</string>
+    <string name="asteroid_hazard_indicator">Asteroid Hazard Indicator</string>
+    <string name="help_icon">Help Icon</string>
 </resources>

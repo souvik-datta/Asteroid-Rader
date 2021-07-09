@@ -1,5 +1,7 @@
 package com.souvik.asteroidrader
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -40,10 +42,21 @@ class DetailsFragment : Fragment() {
             if (details.isPotentiallyHazard) {
                 binding.ivAsteroid.setImageDrawable(requireActivity().getDrawable(R.drawable.dangerous_asteroid))
                 "Potentially Hazard"
-            }
-            else {
+            } else {
                 binding.ivAsteroid.setImageDrawable(requireActivity().getDrawable(R.drawable.good_asteroid))
                 "Not Hazardous"
             }
+
+        binding.ivHelp.setOnClickListener {
+            AlertDialog.Builder(requireContext())
+                .setMessage("The astronomical unit(au) is the unit of length, roughly the distance between the Earth and the Sun and equal to about 150 million kilometer(93 million miles)")
+                .setPositiveButton("ACCEPT", object : DialogInterface.OnClickListener {
+                    override fun onClick(dialog: DialogInterface?, which: Int) {
+                        dialog?.dismiss()
+                    }
+                })
+                .setCancelable(false)
+                .show()
+        }
     }
 }
